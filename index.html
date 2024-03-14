@@ -10,6 +10,9 @@
         .row {
             margin-top: 20px;
         }
+        #nett {
+            background-color: #ffff99; /* Light yellow background */
+        }
     </style>
 </head>
 <body>
@@ -35,7 +38,7 @@
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="nett" class="form-label">Nett (kg):</label>
-                    <input type="number" class="form-control" id="nett" oninput="calculate()" required>
+                    <input type="number" class="form-control" id="nett" oninput="calculate()" required style="background-color: #ffff99;">
                 </div>
                 <div class="mb-3">
                     <label for="rate" class="form-label">Rate:</label>
@@ -64,7 +67,6 @@
             var perbag = document.getElementById("perbag").value;
             var rate = document.getElementById("rate").value;
 
-            // Check if nett and perbag are not zero to avoid division by zero
             if (nett > 0 && perbag > 0) {
                 var amount = (nett / perbag) * rate;
                 document.getElementById("amount").value = amount.toFixed(2); // Rounds to 2 decimal places
